@@ -14,11 +14,23 @@ class _PathWidgetState extends State<PathWidget> {
 
   @override
   Widget build(BuildContext context) {
+    List<Widget> options = [];
+    for (final element in controller.currentNode.options) {
+      Widget button = CustomButton(
+          title: element.title,
+          onPressed: () {
+            setState(() {
+              controller.goToNode(element.nextNodeByID);
+            });
+          });
+      options.add(button);
+    }
+
     return Column(
       children: [
         Text(controller.currentNode.prompt),
         Row(
-          children: [],
+          children: options,
         )
       ],
     );
