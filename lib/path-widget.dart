@@ -26,6 +26,8 @@ class _PathWidgetState extends State<PathWidget> {
       options.add(button);
     }
 
+    final currentWidth = MediaQuery.of(context).size.width;
+
     return Scaffold(
       appBar: AppBar(
           title: Column(
@@ -37,24 +39,31 @@ class _PathWidgetState extends State<PathWidget> {
           ),
         ],
       )),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Text(
-              controller.currentNode.prompt,
-              style: const TextStyle(
-                fontSize: 24,
-                height: 1.5,
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text(
+                controller.currentNode.prompt,
+                style: const TextStyle(
+                  fontSize: 24,
+                  height: 1.5,
+                ),
               ),
             ),
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: options,
-          )
-        ],
+            // Row(
+            //   mainAxisAlignment: MainAxisAlignment.center,
+            //   children: options,
+            // ),
+            Flex(
+              direction: currentWidth < 600 ? Axis.vertical : Axis.horizontal,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: options,
+            )
+          ],
+        ),
       ),
     );
   }

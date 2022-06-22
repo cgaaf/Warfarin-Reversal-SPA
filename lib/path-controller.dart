@@ -17,7 +17,6 @@ class NodeOptions {
 
 class PathController {
   Node currentNode = nodes.firstWhere((element) => element.id == "1");
-  String subtitle = "";
   List<Widget> subtitleWidgets = [];
 
   static Set<Node> nodes = {
@@ -73,10 +72,6 @@ class PathController {
       ],
     )
   };
-
-  Node getNextNodeByID(String id) {
-    return nodes.firstWhere((element) => element.id == id);
-  }
 
   void buildSubtitleWidgets(String textElement) {
     if (textElement == "Restart") {
