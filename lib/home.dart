@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:my_app/branch-inr.dart';
 import 'package:my_app/path-widget.dart';
 
 class HomePage extends StatelessWidget {

@@ -20,19 +20,42 @@ class _PathWidgetState extends State<PathWidget> {
           title: element.title,
           onPressed: () {
             setState(() {
-              controller.goToNode(element.nextNodeByID);
+              controller.goToNode(element.nextNodeByID, element.title);
             });
           });
       options.add(button);
     }
 
-    return Column(
-      children: [
-        Text(controller.currentNode.prompt),
-        Row(
-          children: options,
-        )
-      ],
+    return Scaffold(
+      appBar: AppBar(
+          title: Column(
+        children: [
+          const Text("Warfarin Reversal"),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: controller.subtitleWidgets,
+          ),
+        ],
+      )),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Text(
+              controller.currentNode.prompt,
+              style: const TextStyle(
+                fontSize: 24,
+                height: 1.5,
+              ),
+            ),
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: options,
+          )
+        ],
+      ),
     );
   }
 }

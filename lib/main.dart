@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_app/path-widget.dart';
 import 'home.dart';
 
 void main() {
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.red,
       ),
-      home: const HomePage(),
+      home: const PathWidget(),
     );
   }
 }
