@@ -23,7 +23,7 @@ class PathController {
     // Top level nodes
     Node(
       id: "1",
-      prompt: "What is the INR?",
+      prompt: """# What is the INR?""",
       options: [
         NodeOptions(title: "INR < 1.4", nextNodeByID: "2a"),
         NodeOptions(title: "INR > 1.4", nextNodeByID: "2b")
@@ -33,7 +33,11 @@ class PathController {
     // Level 1 nodes
     Node(
       id: "2a",
-      prompt: "Vitamin K 10 mg IV x1 dose \nRecheck INR Q6hrs x 24hrs",
+      prompt: """
+# Recommendations
+- Vitamin K 10 mg IV x1 dose
+- Recheck INR Q6hrs x 24hrs
+""",
       options: [
         NodeOptions(title: "Restart", nextNodeByID: "1"),
       ],
@@ -41,7 +45,7 @@ class PathController {
 
     Node(
       id: "2b",
-      prompt: "Is there intracranial bleeding?",
+      prompt: """# Is there intracranial bleeding?""",
       options: [
         NodeOptions(
             title: "Intracranial bleeding present", nextNodeByID: "3ba"),
@@ -52,8 +56,21 @@ class PathController {
     // Level 2 nodes
     Node(
       id: "3ba",
-      prompt:
-          "Vitamin K 10mg IV x1 dose, may repeat Q24hrs as needed \n4-Factor Prothrombin Complex Concentrate (PCC)- Kcentra Dosing based on INR \nRepeat INR 1 hour after end of PCC infusion, then Q6hrs x 24hrs \nIf repeat INR > 1.4, give FFP 15 mL/kg STAT",
+      prompt: """
+# Recommendations
+- Vitamin K 10mg IV x1 dose, may repeat Q24hrs as needed
+- 4-Factor PCC (Kcentra) - Dosing based on INR (see chart below) ***DO NOT REPEAT***
+- Repeat INR 1 hour after end of PCC infusion, then Q6hrs x 24hrs
+- If repeat INR > 1.4, give FFP 15 mL/kg STAT
+
+
+| **INR**   | **4 Factor PCC (KCentra) Dosing** |
+| --------- | --------------------------------- |
+| 1.4 - 3.9 | 25 units/kg, max 2500 units       |
+| 4 - 5.9   | 35 units/kg, max 3500 units       |
+| ≥ 6       | 50 units/kg, max 5000 units       |
+| Unknown   | 50 units/kg, max 5000 units       |
+""",
       options: [
         NodeOptions(title: "Restart", nextNodeByID: "1"),
       ],
@@ -62,11 +79,12 @@ class PathController {
     Node(
       id: "3bb",
       prompt: """
-          Vitamin K 10mg IV x1 dose, may repeat Q24hrs as needed
-          4-Factor Prothrombin Complex Concentrate (PCC)- Kcentra 25 units/kg, max 2500 units
-          Repeat INR 1 hour after end of PCC infusion, then Q6hrs x 24hrs
-          If repeat INR > 1.4, give FFP 15 mL/kg STAT
-          """,
+# Recommendations
+- Vitamin K 10mg IV x1 dose, may repeat Q24hrs as needed
+- 4-Factor PCC (KCentra) 25 units/kg, max 2500 units
+- Repeat INR 1 hour after end of PCC infusion, then Q6hrs x 24hrs
+- If repeat INR > 1.4, give FFP 15 mL/kg STAT
+""",
       options: [
         NodeOptions(title: "Restart", nextNodeByID: "1"),
       ],
@@ -95,13 +113,6 @@ class PathController {
 
   void goToNode(String id, String subtitleElement) {
     currentNode = nodes.firstWhere((element) => element.id == id);
-    // if (subtitleElement == "Restart") {
-    //   subtitle = "";
-    // } else if (subtitle == "") {
-    //   subtitle = subtitleElement;
-    // } else {
-    //   subtitle += " * $subtitleElement";
-    // }
     buildSubtitleWidgets(subtitleElement);
   }
 }

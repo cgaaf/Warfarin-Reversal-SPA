@@ -13,9 +13,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Main Page',
+      title: 'Warfarin Reversal Guide',
       theme: ThemeData(
-        primarySwatch: Colors.red,
+        primarySwatch: Colors.deepPurple,
       ),
       home: const PathWidget(),
     );

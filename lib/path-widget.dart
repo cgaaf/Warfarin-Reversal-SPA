@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:my_app/customButton.dart';
+import 'package:flutter_markdown/flutter_markdown.dart';
+import 'package:my_app/widget-components/markdownData.dart';
+import 'widget-components/customButton.dart';
 import 'package:my_app/path-controller.dart';
+import 'package:my_app/widget-components/customMarkdown.dart';
 
 class PathWidget extends StatefulWidget {
   const PathWidget({Key? key}) : super(key: key);
@@ -11,6 +14,11 @@ class PathWidget extends StatefulWidget {
 
 class _PathWidgetState extends State<PathWidget> {
   PathController controller = PathController();
+
+  MarkdownStyleSheet style = MarkdownStyleSheet(
+    h1Align: WrapAlignment.end,
+    textAlign: WrapAlignment.center,
+  );
 
   @override
   Widget build(BuildContext context) {
@@ -44,24 +52,17 @@ class _PathWidgetState extends State<PathWidget> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Text(
-                controller.currentNode.prompt,
-                style: const TextStyle(
-                  fontSize: 24,
-                  height: 1.5,
-                ),
+              padding: const EdgeInsets.all(20.0),
+              child: MarkdownBody(
+                data: controller.currentNode.prompt,
+                styleSheet: style,
               ),
             ),
-            // Row(
-            //   mainAxisAlignment: MainAxisAlignment.center,
-            //   children: options,
-            // ),
             Flex(
               direction: currentWidth < 600 ? Axis.vertical : Axis.horizontal,
               mainAxisAlignment: MainAxisAlignment.center,
               children: options,
-            )
+            ),
           ],
         ),
       ),
