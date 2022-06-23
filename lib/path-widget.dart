@@ -16,8 +16,9 @@ class _PathWidgetState extends State<PathWidget> {
   PathController controller = PathController();
 
   MarkdownStyleSheet style = MarkdownStyleSheet(
-    h1Align: WrapAlignment.end,
-    textAlign: WrapAlignment.center,
+    h1: TextStyle(fontSize: 30.0, fontWeight: FontWeight.w500),
+    tableBody: TextStyle(fontSize: 18.0),
+    p: TextStyle(fontSize: 18.0),
   );
 
   @override
@@ -56,6 +57,7 @@ class _PathWidgetState extends State<PathWidget> {
               child: MarkdownBody(
                 data: controller.currentNode.prompt,
                 styleSheet: style,
+                selectable: true,
               ),
             ),
             Flex(
