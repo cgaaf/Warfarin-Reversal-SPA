@@ -6,6 +6,13 @@ void main() {
   runApp(const MyApp());
 }
 
+const TextStyle latoFont = TextStyle(fontFamily: "lato");
+final TextTheme textTheme = TextTheme(
+  titleLarge: latoFont,
+  bodyText1: latoFont,
+  bodyText2: latoFont,
+);
+
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
