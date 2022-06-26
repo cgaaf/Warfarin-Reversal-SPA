@@ -46,24 +46,26 @@ class _PathWidgetState extends State<PathWidget> {
           ),
         ],
       )),
-      body: SingleChildScrollView(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Padding(
-              padding: const EdgeInsets.all(20.0),
-              child: MarkdownBody(
-                data: controller.currentNode.prompt,
-                styleSheet: style,
-                selectable: true,
+      body: Center(
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(20.0),
+                child: MarkdownBody(
+                  data: controller.currentNode.prompt,
+                  styleSheet: style,
+                  selectable: true,
+                ),
               ),
-            ),
-            Flex(
-              direction: currentWidth < 600 ? Axis.vertical : Axis.horizontal,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: options,
-            ),
-          ],
+              Flex(
+                direction: currentWidth < 600 ? Axis.vertical : Axis.horizontal,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: options,
+              ),
+            ],
+          ),
         ),
       ),
     );
