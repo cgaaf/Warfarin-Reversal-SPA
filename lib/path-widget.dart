@@ -15,11 +15,9 @@ class _PathWidgetState extends State<PathWidget> {
   PathController controller = PathController();
 
   MarkdownStyleSheet style = MarkdownStyleSheet(
-      // h1: const TextStyle(fontSize: 30.0, fontWeight: FontWeight.w500),
       h1: GoogleFonts.openSans(fontSize: 30.0, fontWeight: FontWeight.w500),
-      tableBody: GoogleFonts.lato(fontSize: 18.0),
-      // p: const TextStyle(fontSize: 18.0),
-      p: GoogleFonts.lato(fontSize: 18.0));
+      tableBody: GoogleFonts.openSans(fontSize: 18.0),
+      p: GoogleFonts.openSans(fontSize: 18.0));
 
   @override
   Widget build(BuildContext context) {
