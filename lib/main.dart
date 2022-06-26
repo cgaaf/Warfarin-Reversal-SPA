@@ -22,8 +22,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Warfarin Reversal Guide',
       theme: ThemeData(
-        primarySwatch: Colors.deepPurple,
-        textTheme: textTheme,
+        primaryColor: Colors.purple,
+        fontFamily: GoogleFonts.lato().fontFamily,
       ),
       home: const PathWidget(),
     );
