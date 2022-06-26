@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:my_app/path-widget.dart';
 import 'home.dart';
 
@@ -6,11 +7,10 @@ void main() {
   runApp(const MyApp());
 }
 
-const TextStyle latoFont = TextStyle(fontFamily: "lato");
 final TextTheme textTheme = TextTheme(
-  titleLarge: latoFont,
-  bodyText1: latoFont,
-  bodyText2: latoFont,
+  titleLarge: GoogleFonts.lato(),
+  bodyText1: GoogleFonts.lato(),
+  bodyText2: GoogleFonts.lato(),
 );
 
 class MyApp extends StatelessWidget {

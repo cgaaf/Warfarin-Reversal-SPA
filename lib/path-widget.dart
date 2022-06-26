@@ -16,9 +16,9 @@ class _PathWidgetState extends State<PathWidget> {
   PathController controller = PathController();
 
   MarkdownStyleSheet style = MarkdownStyleSheet(
-    h1: TextStyle(fontSize: 30.0, fontWeight: FontWeight.w500),
-    tableBody: TextStyle(fontSize: 18.0),
-    p: TextStyle(fontSize: 18.0),
+    h1: const TextStyle(fontSize: 30.0, fontWeight: FontWeight.w500),
+    tableBody: const TextStyle(fontSize: 18.0),
+    p: const TextStyle(fontSize: 18.0),
   );
 
   @override
@@ -49,8 +49,7 @@ class _PathWidgetState extends State<PathWidget> {
         ],
       )),
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+        child: ListView(
           children: [
             Padding(
               padding: const EdgeInsets.all(20.0),
