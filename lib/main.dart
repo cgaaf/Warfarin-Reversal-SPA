@@ -23,6 +23,7 @@ class MyApp extends StatelessWidget {
       title: 'Warfarin Reversal Guide',
       theme: ThemeData(
         primarySwatch: Colors.deepPurple,
+        textTheme: textTheme,
       ),
       home: const PathWidget(),
     );
