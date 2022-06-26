@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class CustomButton extends StatelessWidget {
   const CustomButton({
@@ -18,7 +19,11 @@ class CustomButton extends StatelessWidget {
         onPressed: onPressed,
         child: Padding(
           padding: const EdgeInsets.all(20.0),
-          child: Text(title),
+          child: Text(title,
+              style: GoogleFonts.lato(
+                fontSize: 20.0,
+                fontWeight: FontWeight.bold,
+              )),
         ),
       ),
     );
