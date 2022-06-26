@@ -48,8 +48,8 @@ class _PathWidgetState extends State<PathWidget> {
           ),
         ],
       )),
-      body: Center(
-        child: ListView(
+      body: SingleChildScrollView(
+        child: Column(
           children: [
             Padding(
               padding: const EdgeInsets.all(20.0),
