@@ -7,12 +7,6 @@ void main() {
   runApp(const MyApp());
 }
 
-final TextTheme textTheme = TextTheme(
-  titleLarge: GoogleFonts.lato(),
-  bodyText1: GoogleFonts.lato(),
-  bodyText2: GoogleFonts.lato(),
-);
-
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
@@ -23,6 +17,7 @@ class MyApp extends StatelessWidget {
       title: 'Warfarin Reversal Guide',
       theme: ThemeData(
         primaryColor: Colors.purple,
+        accentColor: Colors.deepPurpleAccent,
         fontFamily: GoogleFonts.lato().fontFamily,
       ),
       home: const PathWidget(),

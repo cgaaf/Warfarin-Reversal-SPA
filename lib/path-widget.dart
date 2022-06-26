@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
-import 'package:my_app/widget-components/markdownData.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'widget-components/customButton.dart';
 import 'package:my_app/path-controller.dart';
-import 'package:my_app/widget-components/customMarkdown.dart';
 
 class PathWidget extends StatefulWidget {
   const PathWidget({Key? key}) : super(key: key);
@@ -16,10 +15,11 @@ class _PathWidgetState extends State<PathWidget> {
   PathController controller = PathController();
 
   MarkdownStyleSheet style = MarkdownStyleSheet(
-    h1: const TextStyle(fontSize: 30.0, fontWeight: FontWeight.w500),
-    tableBody: const TextStyle(fontSize: 18.0),
-    p: const TextStyle(fontSize: 18.0),
-  );
+      // h1: const TextStyle(fontSize: 30.0, fontWeight: FontWeight.w500),
+      h1: GoogleFonts.openSans(fontSize: 30.0, fontWeight: FontWeight.w500),
+      tableBody: GoogleFonts.lato(fontSize: 18.0),
+      // p: const TextStyle(fontSize: 18.0),
+      p: GoogleFonts.lato(fontSize: 18.0));
 
   @override
   Widget build(BuildContext context) {
@@ -50,6 +50,7 @@ class _PathWidgetState extends State<PathWidget> {
       )),
       body: SingleChildScrollView(
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Padding(
               padding: const EdgeInsets.all(20.0),
