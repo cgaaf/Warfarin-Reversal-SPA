@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:my_app/path-widget.dart';
 
 void main() {
@@ -11,9 +12,10 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       title: 'Warfarin Reversal Guide',
-      home: PathWidget(),
+      theme: ThemeData(textTheme: GoogleFonts.openSansTextTheme()),
+      home: const PathWidget(),
     );
   }
 }
